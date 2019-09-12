@@ -1,4 +1,7 @@
-class word_spec_count():   
+"""
+Holds the logic behind counting the occerance of a specific word
+"""
+class WordSpecCnt():   
     def __init__(self, word_count):
         self.word_count = word_count
 

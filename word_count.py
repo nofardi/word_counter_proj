@@ -1,5 +1,8 @@
 from collections import Counter
 
+"""
+Class that manages the result counter and the dictionary used thoughout the execution
+"""
 class WordCount():
     def __init__(self):
         self.res = 0
@@ -7,4 +10,4 @@ class WordCount():
     
     def update_dict_words(self, words):
         temp_dict = Counter(words)
-        dict.update(self.words_dict, temp_dict)
+        self.words_dict.update(temp_dict)

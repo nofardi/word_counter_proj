@@ -2,6 +2,11 @@ from app_logic import AppLogic
 import urllib
 import re
 
+"""
+General class for handling the input given.
+Holds the array of the current proccessed input and the counter object that 
+keeps the results perssistent.
+"""
 class Handler(object):
     def __init__(self, cnt_obj):
         self.processed_input = []
@@ -17,23 +22,30 @@ class Handler(object):
         for line in res_obj:
             self.process_input_into_dict(line)
 
-class string_handler(Handler, AppLogic):
+"""
+Specific class for handling a string input 
+"""
+class StringHandler(Handler, AppLogic):
     def __init__(self, input, cnt_obj):
-        super(string_handler, self).__init__(cnt_obj)
-        super(string_handler, self).process_input_into_dict(input)
+        super(StringHandler, self).__init__(cnt_obj)
+        super(StringHandler, self).process_input_into_dict(input)
 
     def count_distinct_words(self):
-        return super(string_handler, self).count_distinct_words()
+        return super(StringHandler, self).count_distinct_words()
 
     def count_occurance(self, word):
-        return super(string_handler, self).count_word_occurance(word)
-    
-class url_handler(Handler, AppLogic):
+        return super(StringHandler, self).count_word_occurance(word)
+
+
+"""
+Specific class for handling a url input 
+"""
+class UrlHandler(Handler, AppLogic):
     def __init__(self, input, cnt_obj):
-        super(url_handler, self).__init__(cnt_obj)
-        self.handle_url(input)
+        super(UrlHandler, self).__init__(cnt_obj)
+        self._handle_url(input)
     
-    def handle_url(self, input):
+    def _handle_url(self, input):
         try:
             response = urllib.urlopen(input)
             self.handle_outter_input(response)
@@ -41,25 +53,27 @@ class url_handler(Handler, AppLogic):
             print('Http error occured!', e.reason)
 
     def count_distinct_words(self):
-        return super(url_handler, self).count_distinct_words()
+        return super(UrlHandler, self).count_distinct_words()
 
     def count_occurance(self, word):
-        return super(url_handler, self).count_word_occurance(word)
+        return super(UrlHandler, self).count_word_occurance(word)
 
 
-class file_handler(Handler, AppLogic):
-    
+"""
+Specific class for handling a file input 
+"""
+class FileHandler(Handler, AppLogic):
     def __init__(self, input, cnt_obj):
-        super(file_handler, self).__init__(cnt_obj)
-        self.handle_file(input)
+        super(FileHandler, self).__init__(cnt_obj)
+        self._handle_file(input)
 
-    def handle_file(self, input):
+    def _handle_file(self, input):
         with open(input, "r") as file_obj:
             self.handle_outter_input(file_obj)
 
     def count_distinct_words(self):
-        return super(file_handler, self).count_distinct_words()
+        return super(FileHandler, self).count_distinct_words()
 
     def count_occurance(self, word):
-        return super(file_handler, self).count_word_occurance(word)
+        return super(FileHandler, self).count_word_occurance(word)
         
