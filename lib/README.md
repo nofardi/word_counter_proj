@@ -6,8 +6,8 @@
 - You're free to enter any input you'd like (as long as it's supported) in any order you think of.
 - The supported inputs are:
     - free text (string) 
-    - file path (absolute path that start with "/" and the file be *.txt)
-    - url that starts with http:// OR https://
+    - file path (absolute path that start with `/` and the file be `*.txt`)
+    - url that starts with `http://` OR `https://`
 - The result of the counters will persist throughout the run, meaning, for example, if you'll run the app with the same input, there will be no distinct words and the occurance of a specific word will multiply.
 
 ## Tests
