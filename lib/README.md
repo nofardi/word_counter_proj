@@ -8,7 +8,7 @@
     - free text (string) 
     - file path (absolute path that start with "/" and the file be *.txt)
     - url that starts with http:// OR https://
-- The result of the counters will throughout the run, meaning if you'll run the app with the same input, there will be no distinct words and the occurance of a specific word will multiply.
+- The result of the counters will persist throughout the run, meaning, for example, if you'll run the app with the same input, there will be no distinct words and the occurance of a specific word will multiply.
 
 ## Tests
 - I've added some unit test in order to test the basic functionality of the app 
