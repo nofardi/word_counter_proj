@@ -1,7 +1,8 @@
 # Word Counter Project
 
 ## Word counter program, a few things to know:
-- To execute run the following command from the project root: `python app.py ${APP_MODE} ${YOUR_INPUT} ${WORD_TO_COUNT}`
+- To execute run the following command from the project root: 
+`python app.py ${APP_MODE} ${YOUR_INPUT} ${WORD_TO_COUNT}`
     - APP_MODE - should be `1` OR `2` 
         - `1` is for count the unique words so far
         - `2` is for counting the occurance so far of the specific word given 
