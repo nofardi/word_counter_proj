@@ -12,5 +12,3 @@ class WordUniqCnt():
                 self.words_count.res += 1
         
         return self.words_count.res
-
-#TODO: add unit testing

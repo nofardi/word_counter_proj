@@ -49,8 +49,8 @@ class UrlHandler(Handler, AppLogic):
         try:
             response = urllib.urlopen(input)
             self.handle_outter_input(response)
-        except urllib.error.HTTPError as e:
-            print('Http error occured!', e.reason)
+        except IOError as e:
+            print('Http error occured!', e.strerror)
 
     def count_distinct_words(self):
         return super(UrlHandler, self).count_distinct_words()
